@@ -31,37 +31,48 @@ class Images extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+    return ListView(
+      padding: const EdgeInsets.all(100),
       children: [
-        Row(
+        Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.network(
-              'https://static.wixstatic.com/media/6f02ae_e0aa6e0e88f141009c6d087d6bb07f3b~mv2.png/v1/fill/w_267,h_297,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/365_logo_Red_Wht_transparentBG.png',
-              width: 267,
-              height: 297,
-              color: Colors.blue,
-              // fit: BoxFit.fill, // Uncomment this line if needed
+            Row(
+              children: [
+                Image.network(
+                  'https://static.wixstatic.com/media/6f02ae_e0aa6e0e88f141009c6d087d6bb07f3b~mv2.png/v1/fill/w_267,h_297,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/365_logo_Red_Wht_transparentBG.png',
+                  width: 267,
+                  height: 297,
+                  color: Colors.blue,
+                  // fit: BoxFit.fill,
+                ),
+                const SizedBox(
+                  height: 10,
+                  width: 10,
+                ), // Spacer between image and text
+                Text(
+                  'LETS GET MOVING',
+                  style: TextStyle(fontSize: 100, fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.start,
+                ),
+              ],
             ),
-            const SizedBox(height: 20), // Spacer between image and text
+            const SizedBox(height: 1),
             const Text(
-              'LETS GET MOVING',
-              style: TextStyle(fontSize: 100, fontWeight: FontWeight.bold),
+              '365 FITNESS LOFT & BOXING CLUB',
+              style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(
+              height: 5,
+              width: 100,
+            ),
+            const Text(
+              'HRS 24/7',
+              style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
+              textAlign: TextAlign.end,
             ),
           ],
-        ),
-        // const SizedBox(height: 20), // Spacer between image and text
-        const Text(
-          '365 FITNESS LOFT & BOXING CLUB',
-          style: TextStyle(fontSize: 100, fontWeight: FontWeight.bold),
-        ),
-        const SizedBox(height: 5), // Spacer between image and text
-
-        Expanded(
-          child: const Text(
-            'HRS 24/7',
-            style: TextStyle(fontSize: 100, fontWeight: FontWeight.bold),
-          ),
         ),
       ],
     );
