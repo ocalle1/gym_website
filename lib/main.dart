@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gym_website/layout/responsive_layout.dart';
 import 'package:gym_website/title/tabs.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gym_website/widgets/navbar.dart';
@@ -18,14 +19,21 @@ class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-          gradient: LinearGradient(colors: [
-        Color(0xfff8fbff),
-        Color(0xfffcfdfd),
-      ])),
-      child: SingleChildScrollView(
-        child: Column(
-          children: <Widget>[NavBar()],
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          colors: [
+            Color(0xfff8fbff),
+            Color(0xfffcfdfd),
+          ],
+        ),
+      ),
+      child: Scaffold(
+        backgroundColor: Colors
+            .blue, // Controls background of wholepage... need to add an animation image
+        body: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[NavBar()],
+          ),
         ),
       ),
     );
